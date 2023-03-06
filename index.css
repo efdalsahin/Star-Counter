@@ -5,6 +5,7 @@ body {
   text-align: center;
   background: linear-gradient(#3a1078, #4e31aa, #2f58cd, #3795bd);
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .outer {
