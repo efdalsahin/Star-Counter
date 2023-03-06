@@ -20,7 +20,8 @@ body {
     justify-content: center;
     justify-items: center;
     flex-direction: column;
-    background:linear-gradient(#3A1078,#4E31AA,#2F58CD,#3795BD);
+    background:linear-gradient(#4E31AA,#2F58CD,#3795BD);
+  
     border:midnightblue;
     border-width:10px;
     border-style: outset;
@@ -38,6 +39,29 @@ h2 {
     font-size: 50px;
     margin-top: 0;
     margin-bottom: 20px;
+}
+.github {
+    position: absolute;
+    margin: 5px;
+    padding: 5px;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 25px;
+    color: white;
+    text-decoration: none;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+
+}
+.github:hover{
+    background: white;
+    color: black;
+    transition
 }
 
 button {
