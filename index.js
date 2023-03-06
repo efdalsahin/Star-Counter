@@ -16,22 +16,35 @@ function decrement() {
   countEl.textContent = count;
 }
 
+function insertAfter(referenceNode, newNode) {
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
 function save(status) {
   if (status == 1) {
-    let count = saveEl.textContent;
-    count += +countEl.textContent + " - ";
-    saveEl.textContent = count;
+    saveEl.textContent = "Congratulations ✅ ✨ 👀 🗿";
+  } else {
+    saveEl.textContent = "Sorry, its wrong. Try again  ";
   }
 
-  console.log(document.getElementById("count-el").textContent);
+  let elem = document.createElement("span");
+  elem.innerHTML =
+    '<button id="tryAgain-btn" onclick="window.location.reload()" >Try Again</button>';
 
-  countEl.textContent = 0;
+  let div = document.getElementById("save-el");
+  insertAfter(div, elem);
+
+  //console.log(document.getElementById("count-el").textContent);
 }
 
 function isCorrect() {
   let finalCount = +document.getElementById("count-el").textContent;
+  //console.log(finalCount);
+  //console.log(starrCount);
   if (finalCount == starrCount) {
-    save;
+    save(1);
+  } else {
+    save(0);
   }
 }
 
@@ -45,13 +58,13 @@ function howMany(info) {
 
 function isBetween(randx, randy, x, y, w, h) {
   if (randx <= x + w + 50 && randx >= x - 50) {
-    console.log("xtrue");
+    //console.log("xtrue");
     if (randy <= y + h + 50 && randy >= y - 50) {
-      console.log("ytrue");
+      //console.log("ytrue");
       return true;
     }
   }
-  console.log("false");
+  //console.log("false");
   return false;
 }
 
@@ -88,7 +101,7 @@ function starCount() {
 function addStar() {
   for (let index = 0; index < starCount(); index++) {
     let star = document.createElement("img");
-    star.src = "/Passenger-Counter/star2.png";
+    star.src = "/star2.png";
     star.style.width = "50px";
     star.style.position = "absolute";
     star.style.zIndex = "1";
@@ -98,9 +111,9 @@ function addStar() {
     star.style.left = x + "px";
     star.style.top = y + "px";
     outer.appendChild(star);
-    console.log(star.x);
-    console.log(star.y);
+    // console.log(star.x);
+    //console.log(star.y);
   }
 
-  console.log(starrCount);
+  //console.log(starrCount);
 }

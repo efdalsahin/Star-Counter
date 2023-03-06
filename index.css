@@ -21,9 +21,10 @@ body {
     flex-direction: column;
     background-color: #E3DFFD;
     border:midnightblue;
-    border-width:5px;
+    border-width:10px;
     border-style: outset;
     padding: 2%;
+    border-radius: 10px;
     
 }
 
@@ -39,7 +40,7 @@ h2 {
 }
 
 button {
-border: none;
+border: solid black;
     padding-top: 10px;
     padding-bottom: 10px;
     color: white;
@@ -48,6 +49,11 @@ border: none;
     margin-bottom: 5px;
     border-radius: 5px;
     
+}
+
+
+#tryAgain-btn {
+    background:#2F58CD
 }
 
 #increment-btn {
