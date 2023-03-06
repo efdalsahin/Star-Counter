@@ -12,7 +12,12 @@ function increment() {
 
 function decrement() {
   let count = +countEl.textContent;
-  count -= 1;
+  if (count == 0) {
+    count = count;
+  } else {
+    count -= 1;
+  }
+
   countEl.textContent = count;
 }
 
@@ -23,16 +28,26 @@ function insertAfter(referenceNode, newNode) {
 function save(status) {
   if (status == 1) {
     saveEl.textContent = "Congratulations ✅ ✨ 👀 🗿";
+    document.getElementById("increment-btn").disabled = true;
+    document.getElementById("decrement-btn").disabled = true;
   } else {
     saveEl.textContent = "Sorry, its wrong. Try again  ";
   }
+  let elementExists = !!document.getElementById("tryAgain-btn");
+  if (elementExists) {
+    openModal();
+    document.getElementById("increment-btn").disabled = true;
+    document.getElementById("decrement-btn").disabled = true;
+  } else {
+    document.getElementById("increment-btn").disabled = true;
+    document.getElementById("decrement-btn").disabled = true;
+    let elem = document.createElement("span");
+    elem.innerHTML =
+      '<button id="tryAgain-btn" onclick="window.location.reload()" >Try Again</button>';
 
-  let elem = document.createElement("span");
-  elem.innerHTML =
-    '<button id="tryAgain-btn" onclick="window.location.reload()" >Try Again</button>';
-
-  let div = document.getElementById("save-el");
-  insertAfter(div, elem);
+    let div = document.getElementById("save-el");
+    insertAfter(div, elem);
+  }
 
   //console.log(document.getElementById("count-el").textContent);
 }
@@ -104,7 +119,6 @@ function addStar() {
     star.src = "/star2.png";
     star.style.width = "80px";
     star.style.position = "absolute";
-    star.style.zIndex = "1";
 
     let { x, y } = createRandom();
 
@@ -116,4 +130,31 @@ function addStar() {
   }
 
   //console.log(starrCount);
+}
+
+//modalll
+
+function openModal() {
+  var modal = document.getElementById("myModal");
+
+  // Get the button that opens the modal
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal
+
+  modal.style.display = "block";
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 }
