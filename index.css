@@ -3,6 +3,7 @@ body {
     font-weight: bold;
     text-align: center;
     background: linear-gradient(#3A1078,#4E31AA, #2F58CD,#3795BD);
+    overflow-y: hidden;
 }
 
 .outer {
@@ -19,7 +20,7 @@ body {
     justify-content: center;
     justify-items: center;
     flex-direction: column;
-    background-color: #E3DFFD;
+    background:linear-gradient(#3A1078,#4E31AA,#2F58CD,#3795BD);
     border:midnightblue;
     border-width:10px;
     border-style: outset;

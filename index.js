@@ -102,7 +102,7 @@ function addStar() {
   for (let index = 0; index < starCount(); index++) {
     let star = document.createElement("img");
     star.src = "/star2.png";
-    star.style.width = "50px";
+    star.style.width = "80px";
     star.style.position = "absolute";
     star.style.zIndex = "1";
 
